@@ -1,0 +1,75 @@
+ * {
+     box-sizing: border-box;
+     font-family: sans-serif;
+     margin: 0;
+     padding: 0;
+ }
+
+ .main-wrapper {
+     padding: 0.5rem 1rem;
+     background-color: lightgray;
+     min-height: 100vh;
+ }
+
+ .required-indicator {
+     color: red;
+ }
+
+ .progress-steps {
+     font-weight: bold;
+ }
+
+ .section-heading {
+     color: red;
+     font-weight: bold;
+     font-size: 1.5rem;
+     margin-top: 1rem;
+ }
+
+ .form-row {
+     margin-bottom: 0;
+ }
+
+ .input-label {
+     display: inline-block;
+     width: 320px;
+     text-align: right;
+     font-weight: bold;
+ }
+
+ .input-field {
+     margin-bottom: 0;
+ }
+
+ .separator-line {
+     padding: 0.5rem 1.5rem;
+     background-color: white;
+ }
+
+ .label-normal-weight {
+     font-weight: 400;
+ }
+
+ .text-gray {
+     color: gray;
+ }
+
+ .inline-content {
+     display: inline-block;
+ }
+
+ .left-padding-324 {
+     padding-left: 324px;
+ }
+
+ .vertical-align-top {
+     vertical-align: top;
+ }
+
+ .number-input-small {
+     width: 60px;
+ }
+
+ .secure-message {
+     font-weight: 400;
+ }

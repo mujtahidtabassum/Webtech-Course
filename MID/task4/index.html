@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 3 Task</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <span class="required-indicator">*</span>
+        <span> - Denotes Required Information</span>
+        <br />
+        <div class="progress-steps">
+            <span> > 1 Donation</span>
+            <span> > &nbsp;&nbsp;&nbsp;Confirmation > &nbsp;&nbsp;&nbsp;Thank You!</span>
+        </div>
+
+        <form id="donationForm">
+            <div class="section-heading">Donor Information</div>
+            <br />
+            <div class="form-content">
+                <div class="form-row">
+                    <label class="input-label" for="fname">
+                        <span>First Name</span>
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <input type="text" id="fname" name="fname" class="input-field" />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="lname">
+                        <span>Last Name</span>
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <input type="text" id="lname" name="lname" class="input-field"  />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="companyName">Company</label>
+                    <input type="text" id="companyName" name="companyName" class="input-field" />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="addr1">
+                        <span>Address 1</span>
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <input type="text" id="addr1" name="addr1" class="input-field"  />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="addr2">Address 2</label>
+                    <input type="text" id="addr2" name="addr2" class="input-field" />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="cityName">
+                        <span>City</span>
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <input type="text" id="cityName" name="cityName" class="input-field"  />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="stateName">
+                        <span>State</span>
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <select id="stateName" name="stateName" class="input-field" required>
+                        <option value="">Select a State</option>
+                        <option value="Pirganj">Pirganj</option>
+                        <option value="Dhaka">Dhaka</option>
+                        <option value="Rajshahi">Rajshahi</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="zip">
+                        <span>Zip Code</span>
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <input type="text" id="zip" name="zip" class="input-field"  />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="countryName">
+                        <span>Country</span>
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <select id="countryName" name="countryName" class="input-field" required>
+                        <option value="">Select a Country</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="USA">USA</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="phoneNumber">Phone</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" class="input-field" />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="faxNumber">Fax</label>
+                    <input type="text" id="faxNumber" name="faxNumber" class="input-field" />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="emailAddress">
+                        <span>Email</span>
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <input type="email" id="emailAddress" name="emailAddress" class="input-field"  />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label">
+                        <span>Donation Amount</span>
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <input type="radio" value="None" name="donationAmount" id="donationNone" class="input-field"
+                        checked />
+                    <span>None</span>
+                    <input type="radio" value="$50" name="donationAmount" id="donation50" class="input-field" />
+                    <span>$50</span>
+                    <input type="radio" value="$75" name="donationAmount" id="donation75" class="input-field" />
+                    <span>$75</span>
+                    <input type="radio" value="$100" name="donationAmount" id="donation100" class="input-field" />
+                    <span>$100</span>
+                    <input type="radio" value="Other" name="donationAmount" id="donationOther" class="input-field" />
+                    <span>Other</span>
+                </div>
+
+                <div class="form-row" id="otherAmountRow">
+                    <label class="input-label" for="otherAmt">Other amount $</label>
+                    <input type="number" id="otherAmt" name="otherAmt" class="input-field" min="1" step="0.01" />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="recurring">Recurring Donation</label>
+                    <input type="checkbox" id="recurring" name="recurring" class="input-field" />
+                    <span> I am interested in giving on a regular basis.</span>
+                </div>
+
+                <div class="form-row" id="recurringRow">
+                    <div class="input-label label-normal-weight">
+                        Monthly Credit Card $
+                    </div>
+                    <input class="number-input-small" type="number" id="monthlyAmount" name="monthlyAmount" min="1"
+                        step="0.01" />
+                    <span> For </span>
+                    <input class="number-input-small" type="number" id="months" name="months" min="1" max="120" />
+                    <span> Months.</span>
+                </div>
+
+                <div class="section-heading">Honorarium and Memorial Donation Information</div>
+                <br />
+
+                <div class="memorial-section">
+                    <div class="form-row">
+                        <label class="input-label">
+                            <span>I would like to make this donation</span>
+                        </label>
+                        <input type="radio" name="purpose" id="toHonor" value="honor" />
+                        <span> To Honor </span>
+                        <br />
+                        <span class="inline-content left-padding-324">
+                            <input type="radio" name="purpose" id="inMemory" value="memory" />
+                            <span> In memory of </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="ackName">Acknowledge Name</label>
+                    <input type="text" id="ackName" name="ackName" class="input-field" />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="ackAddr">Address</label>
+                    <input type="text" id="ackAddr" name="ackAddr" class="input-field" />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="ackCity">City</label>
+                    <input type="text" id="ackCity" name="ackCity" class="input-field" />
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="ackState">State</label>
+                    <select id="ackState" name="ackState" class="input-field">
+                        <option value="">Select a State</option>
+                        <option value="Pirganj">Pirganj</option>
+                        <option value="Dhaka">Dhaka</option>
+                        <option value="Rajshahi">Rajshahi</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="ackZip">Zip Code</label>
+                    <input type="text" id="ackZip" name="ackZip" class="input-field" />
+                </div>
+
+                <div class="section-heading">Additional Information</div>
+                <br />
+
+                <div class="form-row">
+                    <div class="label-normal-weight">
+                        Please enter your name, company or organization as you would like it to appear in our
+                        publications:
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label" for="pubName">Name</label>
+                    <input type="text" id="pubName" name="pubName" class="input-field" />
+                </div>
+
+                <div class="form-row">
+                    <div class="input-label"></div>
+                    <input type="checkbox" id="anonymous" name="anonymous" />
+                    <span> I would like my gift to remain anonymous.</span>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-label"></div>
+                    <input type="checkbox" id="matchingGift" name="matchingGift" />
+                    <span> My employer offers a matching gift program. I will mail the matching gift form.</span>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-label"></div>
+                    <input type="checkbox" id="noThankYou" name="noThankYou" />
+                    <span> Please save the cost of acknowledging this gift by not mailing a thank you letter.</span>
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label vertical-align-top" for="userComments">
+                        <span>Comments</span>
+                        <br />
+                        <span>(Please type any questions or feedback here)</span>
+                    </label>
+                    <textarea id="userComments" name="userComments" rows="4" cols="50" maxlength="200"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <label class="input-label vertical-align-top">How may we contact you?</label>
+                    <div class="inline-content vertical-align-top">
+                        <input type="checkbox" id="contactEmail" name="contactEmail" />
+                        <span> E-mail</span>
+                        <br />
+                        <input type="checkbox" id="contactPostal" name="contactPostal" />
+                        <span> Postal Mail</span>
+                        <br />
+                        <input type="checkbox" id="contactPhone" name="contactPhone" />
+                        <span> Telephone</span>
+                        <br />
+                        <input type="checkbox" id="contactFax" name="contactFax" />
+                        <span> Fax</span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="label-normal-weight text-gray">
+                        I would like to receive newsletters and information about special events by:
+                    </div>
+                    <span class="inline-content left-padding-324">
+                        <input type="checkbox" id="newsletterEmail" name="newsletterEmail" />
+                        <span> Email</span>
+                    </span>
+                    <br />
+                    <span class="inline-content left-padding-324">
+                        <input type="checkbox" id="newsletterPostal" name="newsletterPostal" />
+                        <span> Postal Mail</span>
+                    </span>
+                </div>
+
+                <div class="form-row">
+                    <input type="checkbox" id="volunteer" name="volunteer" />
+                    <span> I would like information about volunteering with the</span>
+                </div>
+
+                <br />
+                <div class="separator-line"></div>
+                <br />
+
+                <div class="form-row">
+                    <div class="input-label"></div>
+                    <input type="reset" value="Reset" />
+                    <input type="submit" value="Continue" />
+                </div>
+
+                <br />
+
+                <div class="form-row">
+                    <div class="input-label"></div>
+                    <span>🔒Donate online with confidence. You are on a secure server.</span>
+                </div>
+
+                <div class="form-row">
+                    <div class="secure-message">
+                        <span>If you have any problems or questions, please contact </span>
+                        <span class="text-gray">support.</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
