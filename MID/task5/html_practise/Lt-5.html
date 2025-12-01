@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AIUB Student">
+    <meta name="description" content="DailyFlash - Breaking news and trending stories from around the world.">
+    <title>DailyFlash | Sports</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 28px;
+        }
+
+        .site-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .site-title p {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #f8f9fa;
+            border-bottom-color: #1e3c72;
+            color: #1e3c72;
+        }
+
+        nav ul li a.active {
+            font-weight: bold;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2rem;
+        }
+
+        /* Main Content Area */
+        main {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        main h2 {
+            color: #388e3c;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #388e3c;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Article Styles */
+        article {
+            margin-bottom: 2rem;
+        }
+
+        article h2 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            font-size: 1.6rem;
+            border: none;
+            padding: 0;
+        }
+
+        article small,
+        article time {
+            color: #666;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        article img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        article p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: #1e3c72;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: #2a5298;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #e0e0e0;
+            margin: 2rem 0;
+        }
+
+        /* Sidebar Styles */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-section h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #1e3c72;
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar-section ul,
+        .sidebar-section ol {
+            list-style-position: inside;
+            padding-left: 0;
+        }
+
+        .sidebar-section li {
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .sidebar-section li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-section li a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar-section li a:hover {
+            color: #1e3c72;
+        }
+
+        .trending {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin-top: 1rem;
+        }
+
+        .trending h4 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .trending p {
+            color: #856404;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .trending a {
+            color: #856404;
+            font-weight: bold;
+        }
+
+        .ad-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .ad-box p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .ad-box small {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            background-color: #34495e;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #3498db;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1.5rem;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+            }
+
+            nav ul li a {
+                padding: 0.8rem 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .site-title h1 {
+                font-size: 2rem;
+            }
+
+            article img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="logo">DF</div>
+            <div class="site-title">
+                <h1>DailyFlash</h1>
+                <p>Your Source for Instant News</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="world.html">World</a></li>
+            <li><a href="sports.html" class="active">Sports</a></li>
+            <li><a href="#">Tech</a></li>
+            <li><a href="#">Lifestyle</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content Section -->
+        <main>
+            <h2>Sports News</h2>
+
+            <!-- Featured Article -->
+            <section>
+                <article>
+                    <h2>National Team Wins Championship</h2>
+                    <time datetime="2025-11-17">November 17, 2025</time>
+                    <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&h=400&fit=crop" alt="Football team celebrating championship victory">
+                    <p>
+                        In a thrilling finale that kept fans on the edge of their seats, the national football team 
+                        secured a historic victory in the International Championship Cup. The team defeated their rivals 
+                        3-2 in an intense match that went into extra time, marking their first championship win in over 
+                        a decade.
+                    </p>
+                    <p>
+                        The match began with both teams displaying exceptional skill and determination. The rival team 
+                        took an early lead in the 15th minute, but our national team responded with two quick goals 
+                        before halftime, bringing the score to 2-1. The second half saw the rivals equalize in the 
+                        78th minute, forcing the game into extra time.
+                    </p>
+                    <p>
+                        Captain Rodriguez scored the winning goal in the 118th minute, sending the home crowd into 
+                        jubilation. His spectacular strike from outside the penalty area left the goalkeeper with no 
+                        chance and sealed the historic victory. The captain was later named Player of the Tournament 
+                        for his outstanding performances throughout the competition.
+                    </p>
+                </article>
+            </section>
+
+            <hr>
+
+            <!-- Additional Article -->
+            <section>
+                <article>
+                    <h2>Olympic Champion Breaks World Record</h2>
+                    <time datetime="2025-11-16">November 16, 2025</time>
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=400&fit=crop" alt="Olympic athlete running">
+                    <p>
+                        Olympic gold medalist shattered the world record in the 100-meter sprint at the International 
+                        Athletics Championship, clocking an astonishing time of 9.52 seconds. The previous record had 
+                        stood for eight years, and this performance marks a new era in sprinting excellence.
+                    </p>
+                    <p>
+                        The athlete credited rigorous training and advanced sports science techniques for the 
+                        breakthrough performance. Sports analysts are calling it one of the greatest achievements 
+                        in track and field history. The record-breaking run has inspired athletes worldwide.
+                    </p>
+                </article>
+            </section>
+
+            <hr>
+
+            <!-- Additional Article -->
+            <section>
+                <article>
+                    <h2>Tennis Star Announces Retirement After Legendary Career</h2>
+                    <time datetime="2025-11-15">November 15, 2025</time>
+                    <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800&h=400&fit=crop" alt="Tennis player on court">
+                    <p>
+                        A beloved tennis champion has announced retirement after 18 years of professional play, leaving 
+                        behind a legacy of 23 Grand Slam titles and countless memorable matches. The announcement came 
+                        during an emotional press conference attended by fellow players and sports legends.
+                    </p>
+                    <p>
+                        The player thanked fans, family, and coaches for their unwavering support throughout a career 
+                        that inspired millions around the world. Plans for a farewell exhibition tour have been announced 
+                        for next spring, giving fans one last chance to see this legend in action.
+                    </p>
+                </article>
+            </section>
+        </main>
+
+        <!-- Sidebar Section -->
+        <aside>
+            <!-- Top Headlines -->
+            <div class="sidebar-section">
+                <h3>Top Headlines</h3>
+                <ol>
+                    <li><a href="#">Breaking: Major Economic Reform Announced by Government</a></li>
+                    <li><a href="#">Scientists Discover Breakthrough Cancer Treatment Method</a></li>
+                    <li><a href="#">Historic Peace Agreement Signed in Middle East</a></li>
+                    <li><a href="#">Tech Innovation Revolutionizes Renewable Energy Sector</a></li>
+                    <li><a href="#">Global Stock Markets Reach Record High Levels</a></li>
+                </ol>
+
+                <!-- Trending Section -->
+                <div class="trending">
+                    <h4>🔥 Editor's Pick</h4>
+                    <p><a href="#">Space Mission Successfully Lands on Mars After Historic Journey</a></p>
+                    <p><a href="#">Celebrity Launches Major Charitable Foundation for Education</a></p>
+                </div>
+            </div>
+
+            <!-- Advertisement Box -->
+            <div class="sidebar-section">
+                <div class="ad-box">
+                    <p>Advertisement Space</p>
+                    <small>Your Brand Could Be Here - Contact Us Today!</small>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 DailyFlash</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">X (Twitter)</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+            </div>
+            <p>All Rights Reserved.</p>
+            <a href="#top" class="back-to-top">Back to Top ↑</a>
+        </div>
+    </footer>
+</body>
+</html>
